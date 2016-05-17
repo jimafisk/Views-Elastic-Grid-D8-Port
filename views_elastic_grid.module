@@ -68,6 +68,7 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
   $style = $view->style_plugin;
   $options = $style->options;
 
+  //var_dump($vars);
   $vars['rows'] = array();
   $vars['options']['default_field_elements'] = FALSE;
 
@@ -75,7 +76,6 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
   $default_row_class = isset($options['default_row_class']) ? $options['default_row_class'] : FALSE;
   $row_class_special = isset($options['row_class_special']) ? $options['row_class_special'] : FALSE;
 
-}/*
   // Set up striping values.
   $count = 0;
   $max = count($rows);
@@ -95,9 +95,11 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
       }
     }
 
-    if ($row_class = $view->style_plugin->get_row_class($i)) {
+    //if ($row_class = $view->style_plugin->get_row_class($i)) {
+    if ($row_class = $view->style_plugin->getRowClass($i)) {
       $vars['classes'][$i][] = $row_class;
     }
+}}/*
 
     // Flatten the classes to a string for each row for the template file.
     $vars['rows'][$i]['classes'] = isset($vars['classes'][$i]) ? implode(' ', $vars['classes'][$i]) : '';
