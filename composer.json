@@ -1,0 +1,14 @@
+{
+  "name": "drupal/views_elastic_grid",
+  "type": "drupal-module",
+  "description": "Views style that displays a grid of thumbnails with expandable previews.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/views_elastic_grid",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/views_elastic_grid",
+    "source": "http://cgit.drupalcode.org/views_elastic_grid"
+  },
+  "require": { }
+}
