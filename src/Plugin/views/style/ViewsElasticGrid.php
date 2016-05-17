@@ -25,6 +25,21 @@ use Drupal\views\Plugin\views\style\StylePluginBase;
  */
 class ViewsElasticGrid extends StylePluginBase {
   /**
+   * Does the style plugin allows to use style plugins.
+   */
+  protected $usesRowPlugin = TRUE;
+
+  /**
+   * Does the style plugin support custom css class for the rows.
+   */
+  protected $usesRowClass = TRUE;
+
+  /**
+   * Does the style plugin support grouping of rows.
+   */
+  protected $usesGrouping = FALSE;
+
+  /**
    * Does the style plugin for itself support to add fields to it's output.
    */
   protected $usesFields = TRUE;

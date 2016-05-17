@@ -24,23 +24,11 @@ function views_elastic_grid_help($route_name, RouteMatchInterface $route_match) 
 }
 
 /**
- * Implements hook_views_api().
- */
-/*
-function views_elastic_grid_views_api() {
-  return array(
-    'api' => 3,
-  );
-}
-*/
-
-/**
  * Implements hook_theme().
  */
 function views_elastic_grid_theme($existing, $type, $theme, $path) {
   return array(
     'views_elastic_grid_list' => array(
-      'template' => 'views-elastic-grid-list',
       'variables' => array('view' => NULL),
     ),
   );
@@ -71,7 +59,7 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
     $vars['list_type_prefix'] = '<' . $handler->options['type'] . ' class="' . $vars['class'] . '">';
   }
   $vars['list_class'] = 'elastic-grid';
-  drupal_add_css(drupal_get_path('module', 'views_elastic_grid') . '/css/views_elastic_grid.default.css');
+  //drupal_add_css(drupal_get_path('module', 'views_elastic_grid') . '/css/views_elastic_grid.default.css');
   $thumbnail_fields = array_keys(array_filter($handler->options['views_elastic_grid']['thumbnail_fields']));
   $expanded_fields = array_keys(array_filter($handler->options['views_elastic_grid']['expanded_fields']));
   $id_field = $handler->options['views_elastic_grid']['id_field'];
@@ -87,6 +75,7 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
   $default_row_class = isset($options['default_row_class']) ? $options['default_row_class'] : FALSE;
   $row_class_special = isset($options['row_class_special']) ? $options['row_class_special'] : FALSE;
 
+}/*
   // Set up striping values.
   $count = 0;
   $max = count($rows);
@@ -135,8 +124,8 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
     $vars['view']->field = $original_fields;
   }
   $dom_id_class = 'view-dom-id-' . $vars['view']->dom_id;
-  drupal_add_js(array('views_elastic_grid' => array($vars['view']->dom_id => '.' . $dom_id_class . ' ul.elastic-grid')), 'setting');
-  drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/veg-modernizer.js');
-  drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/debouncedresize.js');
-  drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/views-elastic-grid.js');
+  //drupal_add_js(array('views_elastic_grid' => array($vars['view']->dom_id => '.' . $dom_id_class . ' ul.elastic-grid')), 'setting');
+  //drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/veg-modernizer.js');
+  //drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/debouncedresize.js');
+  //drupal_add_js(drupal_get_path('module', 'views_elastic_grid') . '/js/views-elastic-grid.js');
 }
