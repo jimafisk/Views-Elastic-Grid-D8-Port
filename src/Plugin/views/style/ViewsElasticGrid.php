@@ -1,6 +1,13 @@
 <?php
 
+/**
+ * @file
+ * Definition of Drupal\views_elastic_grid\Plugin\views\style\ViewsElasticGrid.
+ */
+
 namespace Drupal\views_elastic_grid\Plugin\views\style;
+
+use Drupal\core\form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 
 /**
