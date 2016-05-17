@@ -18,34 +18,9 @@ use Drupal\views\Plugin\views\style\StylePluginBase;
  */
 class ViewsElasticGrid extends StylePluginBase {
   /**
-   * Set default options
-   */
-//  function option_definition() {
-  /**
-   * Does the style plugin allows to use style plugins.
-   */
-  protected $usesRowPlugin = TRUE;
-
-  /**
-   * Does the style plugin support custom css class for the rows.
-   */
-  protected $usesRowClass = TRUE;
-
-  /**
-   * Does the style plugin support grouping of rows.
-   */
-  protected $usesGrouping = FALSE;
-
-  /**
-   * Does the style plugin for itself support to add fields to it's output.
-   */
-  protected $usesFields = TRUE;
-
-  /**
     * {@inheritdoc}
     */
   protected function defineOptions() {
-    //$options = parent::option_definition();
     $options = parent::defineOptions();
 
     $options['views_elastic_grid']['thumbnail_fields'] = array('default' => array());
@@ -58,16 +33,10 @@ class ViewsElasticGrid extends StylePluginBase {
   }
 
   /**
-   * Render the given style.
-   */
-//  function options_form(&$form, &$form_state) {
-  /**
    * {@inheritdoc}
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
-    //parent::options_form($form, $form_state);
     parent::buildOptionsForm($form, $form_state);
-    //$field_names = $this->display->handler->get_field_labels();
     $field_names = $this->displayHandler->getFieldLabels(TRUE);
     $form['views_elastic_grid'] = array(
       '#title' => t('Elastic Grid Settings'),
