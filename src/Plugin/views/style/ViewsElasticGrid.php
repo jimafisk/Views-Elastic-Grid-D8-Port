@@ -25,6 +25,11 @@ use Drupal\views\Plugin\views\style\StylePluginBase;
  */
 class ViewsElasticGrid extends StylePluginBase {
   /**
+   * Does the style plugin for itself support to add fields to it's output.
+   */
+  protected $usesFields = TRUE;
+
+  /**
     * {@inheritdoc}
     */
   protected function defineOptions() {
