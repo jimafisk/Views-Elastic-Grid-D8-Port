@@ -24,7 +24,7 @@
 {% for row in rows %}
   <li id="{{ row.id }}" {{ row.classes ? 'class="' ~ row.classes ~ '"' : "" }}>
     <div class="elastic-grid-thumbnail">
-      <a class="veg-thumbnail-link" href="#{{ row.id }}">{{ row.thumbnail }}</a>
+        <a class="veg-thumbnail-link" href="#{{ row.id }}">{{ row.thumbnail }}</a>
       <div class="veg-thumbnail-pointer"></div>
     </div>
     <div class="elastic-grid-expanded"><div class="elastic-grid-expanded-inner">{{ row.expanded }}</div></div>

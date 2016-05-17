@@ -99,7 +99,6 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
     if ($row_class = $view->style_plugin->getRowClass($i)) {
       $vars['classes'][$i][] = $row_class;
     }
-}}/*
 
     // Flatten the classes to a string for each row for the template file.
     $vars['rows'][$i]['classes'] = isset($vars['classes'][$i]) ? implode(' ', $vars['classes'][$i]) : '';
@@ -120,9 +119,17 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
       }
     }
     $vars['view']->field = $thumbnail_vars;
-    $vars['rows'][$i]['thumbnail'] .= theme('views_view_fields', $vars);
+    //$vars['rows'][$i]['thumbnail'] .= theme('views_view_fields', $vars);
+    $vars['rows'][$i]['thumbnail'] .= array(
+      '#theme' => 'views_view_fields',
+      '#vars' => $vars,
+    );
     $vars['view']->field = $expanded_vars;
-    $vars['rows'][$i]['expanded'] .= theme('views_view_fields', $vars);
+    //$vars['rows'][$i]['expanded'] .= theme('views_view_fields', $vars);
+    $vars['rows'][$i]['expanded'] .= array(
+      '#theme' => 'views_view_fields',
+      '#vars' => $vars,
+    );
     $vars['view']->field = $original_fields;
   }
   $dom_id_class = 'view-dom-id-' . $vars['view']->dom_id;
