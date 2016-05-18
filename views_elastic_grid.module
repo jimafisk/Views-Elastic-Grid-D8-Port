@@ -131,6 +131,7 @@ function template_preprocess_views_elastic_grid_list(&$vars) {
       '#vars' => $vars,
     );
     $vars['view']->field = $original_fields;
+    //var_dump($vars);
   }
   $dom_id_class = 'view-dom-id-' . $vars['view']->dom_id;
   //drupal_add_js(array('views_elastic_grid' => array($vars['view']->dom_id => '.' . $dom_id_class . ' ul.elastic-grid')), 'setting');

@@ -11,9 +11,6 @@
  * @ingroup views_templates
  */
 #}
-<h1>Hi!!!</h1>
-{{ list_class }}
-
 {{ wrapper_prefix }}
 
 {% if title %}
@@ -22,7 +19,7 @@
 
 <ul class="{{ list_class }}">
 {% for row in rows %}
-  <li id="{{ row.id }}" {{ row.classes ? 'class="' ~ row.classes ~ '"' : "" }}>
+<li id="{{ row.id }}" {% if row.classes %} class="{{ row.classes }}" {% endif %}>
     <div class="elastic-grid-thumbnail">
         <a class="veg-thumbnail-link" href="#{{ row.id }}">{{ row.thumbnail }}</a>
       <div class="veg-thumbnail-pointer"></div>
